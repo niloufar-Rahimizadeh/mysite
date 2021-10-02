@@ -10,3 +10,7 @@ def register(request):
         if form.is_valid(): 
             form.save()
     return render(request, 'registration/register.html')
+
+
+def profile(request):
+    return render(request, 'user/profile.html')
