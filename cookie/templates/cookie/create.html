@@ -1,0 +1,40 @@
+{% extends 'admin/dashboard.html' %}
+
+
+{% block dashboard %}
+    <form action="{% url 'cookie.create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="id_title">Title: </label>
+            <input type="text" id="id_title", name="title" placeholder="Title..." required>
+        </div>
+        <br>
+        <div>
+            <label for="id_name">Name: </label>
+            <input type="text" id="id_name", name="name" placeholder="Name..." required>
+        </div>
+        <br>
+        <div>
+            <label for="id_price">Price: </label>
+            <input type="text" id="id_price", name="price" placeholder="Price..." required>
+        </div>
+        <br>
+        <div>
+            <label for="id_serial">Serial: </label>
+            <input type="text" id="id_serial", name="serial" placeholder="Serial..." required>
+        </div>
+        <br>
+        <div>
+            <label for="id_body">Description: </label>
+            <textarea type="text" id="id_body", name="body" placeholder="Description..."></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="id_image">Description: </label>
+            <input type="text" id="id_image", name="image">
+        </div>
+        <br>
+        <input type="submit" value="Store">
+    </form>
+{% endblock dashboard %}
+    

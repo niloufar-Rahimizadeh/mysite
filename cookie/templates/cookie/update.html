@@ -1,0 +1,17 @@
+{% extends 'admin/dashboard.html' %}
+
+
+{% block dashboard %}
+    <form action="{% url 'cookie.update' cookie.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="id_title">Title: </label>
+            <input type="text" id="id_title" name="title", value="{{ cookie.title }}" required>
+        </div>
+        <div>
+            <label for="id_name">Name: </label>
+            <input type="text" id="id_name" name="name", value="{{ cookie.name }}" required>
+        </div>
+    </form>
+{% endblock dashboard %}
+    

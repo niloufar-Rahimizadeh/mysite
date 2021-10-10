@@ -1,0 +1,16 @@
+{% extends 'admin/dashboard.html' %}
+
+
+{% block dashboard %}
+    <ul>
+        {% for cookie in cookies %}
+        <li>Title is:{{cookie.title}}</li>
+        <li>Name is:{{cookie.name}}</li>
+        <li>Price is:{{cookie.price}}</li>
+        <li>Serial is:{{cookie.serial}}</li>
+        <li>Description is:{{cookie.body}}</li>
+        <li>Image is: <img src="/{{cookie.image}}"></li>
+        {% endfor %}
+    </ul>
+{% endblock dashboard %}
+    
